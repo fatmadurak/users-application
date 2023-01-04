@@ -8,13 +8,13 @@ const [loading,setLoading]=useState(true);
 
 useEffect(()=>{
 
+(async()=>{ 
+    
+ await axios("https://jsonplaceholder.typicode.com/users")
+.then((res)=>setUsers(res.data))
+.finally(()=>setLoading(false))})
 
-    axios("https://jsonplaceholder.typicode.com/users")
-    .then((res)=>setUsers(res.data))
-    .finally(()=>setLoading(false))
-   
-
-},[])
+()},[])
 
   return (
 
@@ -27,7 +27,7 @@ useEffect(()=>{
 
       users.map((user) => (
     
-        <li key={user.id}onClick={setActiveId}>{user.name}</li>
+        <li key={user.id} onClick={()=>setActiveId(user.id)}>{user.name}</li>
 
       ))
          }
