@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
 
-function Users() {
+function Users({setActiveId}) {
 
 const [users,setUsers]=useState([]);
 const [loading,setLoading]=useState(true);
@@ -27,7 +27,7 @@ useEffect(()=>{
 
       users.map((user) => (
     
-        <li key={user.id}>{user.name}</li>
+        <li key={user.id}onClick={setActiveId}>{user.name}</li>
 
       ))
          }
