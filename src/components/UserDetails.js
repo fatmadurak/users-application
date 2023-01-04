@@ -3,7 +3,7 @@ import axios from "axios"
 
 function UserDetails({activeId}) {
 
-    const [user,setUser]=useState(null);
+    const [user,setUser]=useState();
     const[loading,setLoading]=useState(false);
 
     useEffect(()=>{
