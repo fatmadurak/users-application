@@ -25,12 +25,12 @@ useEffect(()=>{
        <ul>
        {
 
-        users.map((user=>{
+      users.map((user) => (
+    
+        <li key={user.id}>{user.name}</li>
 
-          <li key={user.id}>{user.name}</li>
-
-        }))
-        }
+      ))
+         }
        </ul>
     </div>
   )
